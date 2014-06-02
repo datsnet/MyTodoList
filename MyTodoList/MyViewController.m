@@ -7,6 +7,8 @@
 //
 
 #import "MyViewController.h"
+#import <MMDrawerController.h>
+#import "MySampleDrawer.h"
 
 @interface MyViewController ()
 
@@ -18,6 +20,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    // 左、中央、右のビューコントローラを作成
+    MySampleDrawer * leftDrawer = [[MySampleDrawer alloc] init];
+    UIViewController * center = [[UIViewController alloc] init];
+    UIViewController * rightDrawer = [[UIViewController alloc] init];// MMDrawerControllerオブジェクトを作成
+    
+    leftDrawer.view.backgroundColor = [UIColor redColor];
+    MMDrawerController * drawerController = [[MMDrawerController alloc]
+                                             initWithCenterViewController:center
+                                             leftDrawerViewController:leftDrawer
+                                             rightDrawerViewController:rightDrawer];
+    [drawerController openDrawerGestureModeMask];
+    
+
+    
 }
 
 - (void)didReceiveMemoryWarning

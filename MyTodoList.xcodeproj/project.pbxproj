@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		079D089AE18341659C2D30E5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE374C48E78E4956BC26C902 /* libPods.a */; };
+		F09854DB193B19B500E5963D /* MySampleDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = F09854DA193B19B500E5963D /* MySampleDrawer.m */; };
 		F0E924B4193A318A00A72164 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E924B3193A318A00A72164 /* Foundation.framework */; };
 		F0E924B6193A318A00A72164 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E924B5193A318A00A72164 /* CoreGraphics.framework */; };
 		F0E924B8193A318A00A72164 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E924B7193A318A00A72164 /* UIKit.framework */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		412226D170884554B34D754D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		F09854D9193B19B500E5963D /* MySampleDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySampleDrawer.h; sourceTree = "<group>"; };
+		F09854DA193B19B500E5963D /* MySampleDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySampleDrawer.m; sourceTree = "<group>"; };
 		F0E924B0193A318A00A72164 /* MyTodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E924B3193A318A00A72164 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F0E924B5193A318A00A72164 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +58,7 @@
 		F0E924DA193A318B00A72164 /* MyTodoListTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyTodoListTests-Info.plist"; sourceTree = "<group>"; };
 		F0E924DC193A318B00A72164 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F0E924DE193A318B00A72164 /* MyTodoListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTodoListTests.m; sourceTree = "<group>"; };
+		FE374C48E78E4956BC26C902 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,7 @@
 				F0E924B6193A318A00A72164 /* CoreGraphics.framework in Frameworks */,
 				F0E924B8193A318A00A72164 /* UIKit.framework in Frameworks */,
 				F0E924B4193A318A00A72164 /* Foundation.framework in Frameworks */,
+				079D089AE18341659C2D30E5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +93,7 @@
 				F0E924D8193A318B00A72164 /* MyTodoListTests */,
 				F0E924B2193A318A00A72164 /* Frameworks */,
 				F0E924B1193A318A00A72164 /* Products */,
+				412226D170884554B34D754D /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +113,7 @@
 				F0E924B5193A318A00A72164 /* CoreGraphics.framework */,
 				F0E924B7193A318A00A72164 /* UIKit.framework */,
 				F0E924D2193A318B00A72164 /* XCTest.framework */,
+				FE374C48E78E4956BC26C902 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,6 +128,8 @@
 				F0E924C9193A318B00A72164 /* MyViewController.m */,
 				F0E924CB193A318B00A72164 /* Images.xcassets */,
 				F0E924BA193A318A00A72164 /* Supporting Files */,
+				F09854D9193B19B500E5963D /* MySampleDrawer.h */,
+				F09854DA193B19B500E5963D /* MySampleDrawer.m */,
 			);
 			path = MyTodoList;
 			sourceTree = "<group>";
@@ -159,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0E924E2193A318B00A72164 /* Build configuration list for PBXNativeTarget "MyTodoList" */;
 			buildPhases = (
+				57EC90CC729D439882B4C0C4 /* Check Pods Manifest.lock */,
 				F0E924AC193A318A00A72164 /* Sources */,
 				F0E924AD193A318A00A72164 /* Frameworks */,
 				F0E924AE193A318A00A72164 /* Resources */,
+				48703F5872194858A5F702A6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,11 +258,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		48703F5872194858A5F702A6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57EC90CC729D439882B4C0C4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F0E924AC193A318A00A72164 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09854DB193B19B500E5963D /* MySampleDrawer.m in Sources */,
 				F0E924CA193A318B00A72164 /* MyViewController.m in Sources */,
 				F0E924C4193A318A00A72164 /* MyAppDelegate.m in Sources */,
 				F0E924C0193A318A00A72164 /* main.m in Sources */,
@@ -374,26 +421,32 @@
 		};
 		F0E924E3193A318B00A72164 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 412226D170884554B34D754D /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyTodoList/MyTodoList-Prefix.pch";
 				INFOPLIST_FILE = "MyTodoList/MyTodoList-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		F0E924E4193A318B00A72164 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 412226D170884554B34D754D /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyTodoList/MyTodoList-Prefix.pch";
 				INFOPLIST_FILE = "MyTodoList/MyTodoList-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -457,6 +510,7 @@
 				F0E924E4193A318B00A72164 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F0E924E5193A318B00A72164 /* Build configuration list for PBXNativeTarget "MyTodoListTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +519,7 @@
 				F0E924E7193A318B00A72164 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
