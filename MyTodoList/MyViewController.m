@@ -7,8 +7,8 @@
 //
 
 #import "MyViewController.h"
-#import <MMDrawerController.h>
-#import "MySampleDrawer.h"
+#import "SWRevealViewController.h"
+
 
 @interface MyViewController ()
 
@@ -20,17 +20,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    // 左、中央、右のビューコントローラを作成
-    MySampleDrawer * leftDrawer = [[MySampleDrawer alloc] init];
-    UIViewController * center = [[UIViewController alloc] init];
-    UIViewController * rightDrawer = [[UIViewController alloc] init];// MMDrawerControllerオブジェクトを作成
+
+    // Change button color
+    _sidebarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
     
-    leftDrawer.view.backgroundColor = [UIColor redColor];
-    MMDrawerController * drawerController = [[MMDrawerController alloc]
-                                             initWithCenterViewController:center
-                                             leftDrawerViewController:leftDrawer
-                                             rightDrawerViewController:rightDrawer];
-    [drawerController openDrawerGestureModeMask];
+    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
+    _sidebarButton.target = self.revealViewController;
+    _sidebarButton.action = @selector(revealToggle:);
+    
+    // Set the gesture
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+
+    
+    
+    
     
 
     
