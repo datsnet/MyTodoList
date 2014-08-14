@@ -7,22 +7,20 @@
 //
 
 #import "MyAppDelegate.h"
+#import "SWRevealViewController.h"
+#import "RightViewController.h"
+#import "CustomAnimationController.h"
+
+@interface MyAppDelegate()<SWRevealViewControllerDelegate>
+
+@end
 
 @implementation MyAppDelegate
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-//    UIImage *navBackgroundImage = [UIImage imageNamed:@"nav_bg"];
-//    [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
-//    
-//    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-//                                                           [UIColor colorWithRed:10.0/255.0 green:10.0/255.0 blue:10.0/255.0 alpha:1.0], UITextAttributeTextColor,
-//                                                           [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8],UITextAttributeTextShadowColor,
-//                                                           [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],
-//                                                           UITextAttributeTextShadowOffset,
-//                                                           [UIFont fontWithName:@"Helvetica-Light" size:20.0], UITextAttributeFont, nil]];
-    
+
     return YES;
 }
 							
@@ -52,5 +50,25 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark - SWRevealViewDelegate
+
+- (id <UIViewControllerAnimatedTransitioning>)revealController:(SWRevealViewController *)revealController animationControllerForOperation:(SWRevealControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+{
+    if ( operation != SWRevealControllerOperationReplaceRightController )
+        return nil;
+    
+    if ( [toVC isKindOfClass:[RightViewController class]] )
+    {
+        if ( [(RightViewController*)toVC wantsCustomAnimation] )
+        {
+            id<UIViewControllerAnimatedTransitioning> animationController = [[CustomAnimationController alloc] init];
+            return animationController;
+        }
+    }
+    
+    return nil;
+}
+
 
 @end

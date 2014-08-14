@@ -7,7 +7,6 @@
 //
 
 #import "MyViewController.h"
-#import "SWRevealViewController.h"
 
 
 @interface MyViewController ()
@@ -30,11 +29,6 @@
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-
-    
-    
-    
-    
 
     
 }
