@@ -1,18 +1,15 @@
 language: objective-c
-
 before_install:
- - gem install cocoapods -v '0.34.4'
- - pod install
-
+- gem install cocoapods -v '0.34.4'
+- pod install
 script:
-  - xctool -workspace MyTodoList.xcworkspace -scheme YOURSCHEME -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-  - xcodebuild -workspace MyTodoList.xcworkspace -scheme YOURSCHEME -destination 'platform=iOS Simulator,name=iPhone 6' test
- 
+- xctool -workspace MyTodoList.xcworkspace -scheme YOURSCHEME -sdk iphonesimulator
+  ONLY_ACTIVE_ARCH=NO
+- xcodebuild -workspace MyTodoList.xcworkspace -scheme YOURSCHEME -destination 'platform=iOS
+  Simulator,name=iPhone 6' test
 after_success:
-  - chmod 755 chatwork.sh
-  - ./slack.sh
-
+- chmod 755 chatwork.sh
+- ./slack.sh
 notifications:
   slack:
-    rooms:
-      secure: "U/wJFzrnaMG2i9VU/8AmwmDa5/90jYftzWm8YypCVMveH4DuLE+WTb2RZMFtrh2hf9g/RyAXMFu+er017Qt0JX4w6ASUVer+d+3c+03jRDRTSv/QtaPXsWdmcgM7e9U6RgWfq2/zi09ZPp/ENukErf4/r51EPESXKGpDV7eeTLs="
+    secure: iGT5vxadnF1Nun9HLVXWz7iXmLwsGKwHpGSg96oo97HvduNR8BBS5/FmLR+0nQNXXrmTEYqTtbW/t1JFGSCJWPiJbNYOLA0AwY3DcHPOrNFF/0Yv3O19pokmAcVrlQnFfzsiC7fGCbDHaqLonfwZbFJltO9QjiWjuZXF+F+vJSw=
