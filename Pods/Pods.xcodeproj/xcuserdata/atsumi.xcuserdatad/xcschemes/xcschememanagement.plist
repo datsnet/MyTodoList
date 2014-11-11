@@ -14,7 +14,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,12 +27,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7F7E4768751240748B2EEFE6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C706D359CA304232A2302DBD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>D88818DDB48047C3B04377B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE1B8619D4D84A7AB17778CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FED9429BA0FD401D9CFFEAF7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
