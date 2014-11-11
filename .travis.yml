@@ -5,7 +5,7 @@ before_install:
 script:
 - xctool -workspace MyTodoList.xcworkspace -scheme MyTodoList -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 - xcodebuild -workspace MyTodoList.xcworkspace -scheme MyTodoList -destination 'platform=iOS
-  Simulator,name=iPhone 6'
+  Simulator,name=iPhone 6' test
 env:
   global:
     - LANG=en_US.UTF-8
