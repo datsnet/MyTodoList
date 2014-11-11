@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F0E924AF193A318A00A72164"
-               BuildableName = "MyTodoList.app"
-               BlueprintName = "MyTodoList"
-               ReferencedContainer = "container:MyTodoList.xcodeproj">
+               BlueprintIdentifier = "EE1B8619D4D84A7AB17778CE"
+               BuildableName = "libPods.a"
+               BlueprintName = "Pods"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EE1B8619D4D84A7AB17778CE"
-               BuildableName = "libPods.a"
-               BlueprintName = "Pods"
-               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+               BlueprintIdentifier = "F0E924AF193A318A00A72164"
+               BuildableName = "MyTodoList.app"
+               BlueprintName = "MyTodoList"
+               ReferencedContainer = "container:MyTodoList.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
