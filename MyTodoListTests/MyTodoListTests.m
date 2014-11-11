@@ -28,7 +28,14 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+//    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    int ten = 10;
+    int ten_2 = 10;
+    int five = 5;
+    
+    XCTAssertEqual(ten, ten_2, "tenとten_2は同じはず");
+    XCTAssertNotEqual(ten, five, "value1とvalue2は異なるはず");
+    
 }
 
 @end
