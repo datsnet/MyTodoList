@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		079D089AE18341659C2D30E5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE374C48E78E4956BC26C902 /* libPods.a */; };
 		4902F7E01A11E5C700031EB0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE374C48E78E4956BC26C902 /* libPods.a */; };
+		49814F6E1A1237F3008F4EB7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE374C48E78E4956BC26C902 /* libPods.a */; };
 		F046F4351967DD0200B8CDE7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F046F4341967DD0200B8CDE7 /* MainStoryboard.storyboard */; };
 		F046F43A1967E30800B8CDE7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F046F4391967E30800B8CDE7 /* MapKit.framework */; };
 		F046F4461999258400B8CDE7 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F046F4371967DFAB00B8CDE7 /* MapViewController.m */; };
@@ -96,11 +96,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49814F6E1A1237F3008F4EB7 /* libPods.a in Frameworks */,
 				F0E924B6193A318A00A72164 /* CoreGraphics.framework in Frameworks */,
 				F0E924B8193A318A00A72164 /* UIKit.framework in Frameworks */,
 				F046F43A1967E30800B8CDE7 /* MapKit.framework in Frameworks */,
 				F0E924B4193A318A00A72164 /* Foundation.framework in Frameworks */,
-				079D089AE18341659C2D30E5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
