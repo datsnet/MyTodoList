@@ -572,6 +572,7 @@
 		};
 		F0E924E7193A318B00A72164 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 412226D170884554B34D754D /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MyTodoList.app/MyTodoList";
 				FRAMEWORK_SEARCH_PATHS = (
