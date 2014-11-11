@@ -558,6 +558,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
 					"<Multiple",
 					"values>",
@@ -582,6 +583,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyTodoList/MyTodoList-Prefix.pch";
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
 					"<Multiple",
 					"values>",
