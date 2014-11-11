@@ -5,9 +5,16 @@ before_install:
 script:
 - xcodebuild -workspace MyTodoList.xcworkspace -scheme MyTodoList -destination 'platform=iOS
   Simulator,name=iPhone 6' test
+env:
+  global:
+    - LANG=en_US.UTF-8
+    - LC_ALL=en_US.UTF-8
 after_success:
-- chmod 755 chatwork.sh
+- chmod 755 slac.sh
 - ./slack.sh
 notifications:
   slack:
     secure: iGT5vxadnF1Nun9HLVXWz7iXmLwsGKwHpGSg96oo97HvduNR8BBS5/FmLR+0nQNXXrmTEYqTtbW/t1JFGSCJWPiJbNYOLA0AwY3DcHPOrNFF/0Yv3O19pokmAcVrlQnFfzsiC7fGCbDHaqLonfwZbFJltO9QjiWjuZXF+F+vJSw=
+    format: html
+    template:
+      - '<a href="%{build_url}">%{repository}#%{build_number}</a> (<a href="%{compare_url}">%{branch} - %{commit} : %{author}</a>)'
