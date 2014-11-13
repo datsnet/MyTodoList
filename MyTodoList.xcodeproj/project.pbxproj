@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4902F7E01A11E5C700031EB0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE374C48E78E4956BC26C902 /* libPods.a */; };
 		49814F6E1A1237F3008F4EB7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE374C48E78E4956BC26C902 /* libPods.a */; };
+		49814F741A147F33008F4EB7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49814F731A147F33008F4EB7 /* SWRevealViewController.m */; };
 		F046F4351967DD0200B8CDE7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F046F4341967DD0200B8CDE7 /* MainStoryboard.storyboard */; };
 		F046F43A1967E30800B8CDE7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F046F4391967E30800B8CDE7 /* MapKit.framework */; };
 		F046F4461999258400B8CDE7 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F046F4371967DFAB00B8CDE7 /* MapViewController.m */; };
@@ -49,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		412226D170884554B34D754D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		49814F721A147F33008F4EB7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		49814F731A147F33008F4EB7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		F046F4341967DD0200B8CDE7 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		F046F4361967DFAB00B8CDE7 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		F046F4371967DFAB00B8CDE7 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -118,6 +121,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49814F701A147F18008F4EB7 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				49814F711A147F33008F4EB7 /* SWRevealViewController */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		49814F711A147F33008F4EB7 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				49814F721A147F33008F4EB7 /* SWRevealViewController.h */,
+				49814F731A147F33008F4EB7 /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		F0B91A84199B98150041D607 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +211,7 @@
 		F0E924B9193A318A00A72164 /* MyTodoList */ = {
 			isa = PBXGroup;
 			children = (
+				49814F701A147F18008F4EB7 /* Library */,
 				F0B91A84199B98150041D607 /* Model */,
 				F0B91A8E199BBA130041D607 /* Animation Controllers */,
 				F0B91A93199BBA4A0041D607 /* Resources */,
@@ -399,6 +420,7 @@
 				F046F44A1999258500B8CDE7 /* MyViewController.m in Sources */,
 				F046F44B1999258500B8CDE7 /* MainViewController.m in Sources */,
 				F0B91A8D199BBA0B0041D607 /* CustomAnimationController.m in Sources */,
+				49814F741A147F33008F4EB7 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
