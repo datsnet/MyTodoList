@@ -11,7 +11,7 @@
                 <viewController id="2" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <connections>
                         <segue destination="vRn-8p-pLv" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegue" id="tdg-ex-6WR"/>
-                        <segue destination="fWZ-H6-3Jr" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegue" id="zye-PO-mLj"/>
+                        <segue destination="mLM-6c-6FR" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegue" id="RHd-v4-Tva"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -90,7 +90,7 @@
         <!--Navigation Controller-->
         <scene sceneID="02k-2c-zGr">
             <objects>
-                <navigationController id="mLM-6c-6FR" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="mLM-6c-6FR" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VBH-sg-9Xc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -135,6 +135,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Zwh-ri-o4p" kind="modal" id="i49-XK-RwG"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -162,6 +165,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thA-fT-bca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1574" y="-179"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="NqR-DY-zQ3">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="Zwh-ri-o4p" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HNf-jE-V6X"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qab-Kd-F6e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JnE-8i-Pvh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FUk-sh-jhm">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="Bk1-B7-8Q8">
+                                        <barButtonItem key="rightBarButtonItem" title="Close" id="JS5-7R-tj0">
+                                            <connections>
+                                                <action selector="closeButton:" destination="Zwh-ri-o4p" id="zUa-0W-2kb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3p0-BG-o3x">
+                                <rect key="frame" x="0.0" y="72" width="320" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="05P-ma-FYG">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="05P-ma-FYG" id="fRq-uc-oDR">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="期限日" translatesAutoresizingMaskIntoConstraints="NO" id="E5r-gS-fFM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="JS5-7R-tj0" id="Cmr-Dr-fQg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ukC-Bu-4xo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957" y="-179"/>
+        </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="0bM-Gd-Q6O">
+            <objects>
+                <viewController storyboardIdentifier="DatePickerViewController" id="sF3-R2-pJC" customClass="DatePickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ITy-16-yXM"/>
+                        <viewControllerLayoutGuide type="bottom" id="JOd-wm-6c2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nSp-r2-dX7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uOS-PE-fGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2326" y="-226"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="cdx-7p-qaC">
@@ -274,7 +351,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Kfd-NS-DdZ"/>
-        <segue reference="PYL-cv-YlC"/>
+        <segue reference="rf8-LM-xC2"/>
+        <segue reference="wlK-HK-4rj"/>
     </inferredMetricsTieBreakers>
 </document>

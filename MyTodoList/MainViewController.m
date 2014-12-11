@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "MyTodoItem.h"
+#import "DetailViewController.h"
 
 @interface MainViewController() <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addItem;
@@ -72,15 +73,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    // Todoの完了と未完了をトグルする
-    MyTodoItem *item = self.items[indexPath.row];
-    item.completed = !item.completed;
-    // アクセサリーの設定
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = (item.completed ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone);
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    // Todoの完了と未完了をトグルする
+//    MyTodoItem *item = self.items[indexPath.row];
+//    item.completed = !item.completed;
+//    // アクセサリーの設定
+//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    cell.accessoryType = (item.completed ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone);
+
+    [self showDetailViewController];
+
 }
 
+- (void) showDetailViewController
+{
+    DetailViewController *detaliViewController = [[DetailViewController alloc] init];
+    [self presentViewController:detaliViewController animated:YES completion:nil];
+}
 - (IBAction)addItem:(id)sender
 {
     MyTodoItem *newItem = [[MyTodoItem alloc] init];
