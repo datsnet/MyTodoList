@@ -26,13 +26,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-
+    
     
     // TODO: DBから値を取ってくる
-    
 }
 
 #pragma mark - Table view data source

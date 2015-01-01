@@ -7,10 +7,10 @@
 //
 #import "DetailViewController.h"
 
-@interface DetailViewController() <UITableViewDelegate, UITableViewDataSource>
+@interface DetailViewController() <UITableViewDelegate, UITableViewDataSource, UINavigationBarDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *datasource;
-@property (nonatomic) NSMutableArray *items;
+@property (nonatomic) NSArray *cellNames;
 @end
 
 @implementation DetailViewController
@@ -22,27 +22,28 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    self.cellNames = [NSArray arrayWithObjects:@"CellLimited", nil];
     self.tableView.allowsMultipleSelectionDuringEditing = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // ナビゲーションバーを表示する
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    
+    // ツールバーの表示
+    [self.navigationController setToolbarHidden:NO];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.items.count;
+    return self.cellNames.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"TodoListPropertyCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = self.datasource[indexPath.row];
-    
-    
-    // セルを設定する
-//    MyTodoItem *item = self.items[indexPath.row];
-//    cell.textLabel.text = item.title;
-//    cell.accessoryType = (item.completed ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone);
-    
+    NSString *cellName = [self.cellNames objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellName];
     
     return cell;
 }
@@ -64,12 +65,12 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    _items = [[NSMutableArray alloc] init];
+    _cellNames = [[NSMutableArray alloc] init];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"All Todos";
+    return @"TEST";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
