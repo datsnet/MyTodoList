@@ -21,6 +21,8 @@
 		F046F44A1999258500B8CDE7 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E924C9193A318B00A72164 /* MyViewController.m */; };
 		F046F44B1999258500B8CDE7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F046F4441967E83100B8CDE7 /* MainViewController.m */; };
 		F046F44C199925A400B8CDE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E924BF193A318A00A72164 /* main.m */; };
+		F08986D31A559749006FB6AF /* MyDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F08986D21A559749006FB6AF /* MyDateUtil.m */; };
+		F08986DF1A55A4DF006FB6AF /* MyDateUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F08986DE1A55A4DF006FB6AF /* MyDateUtilTests.m */; };
 		F0B91A87199B98480041D607 /* MyTodoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B91A86199B98480041D607 /* MyTodoItem.m */; };
 		F0B91A8A199BB5A30041D607 /* MyBaseUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B91A89199BB5A30041D607 /* MyBaseUIViewController.m */; };
 		F0B91A8D199BBA0B0041D607 /* CustomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B91A8C199BBA0B0041D607 /* CustomAnimationController.m */; };
@@ -64,6 +66,9 @@
 		F046F4391967E30800B8CDE7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F046F4431967E83100B8CDE7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		F046F4441967E83100B8CDE7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		F08986D21A559749006FB6AF /* MyDateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDateUtil.m; sourceTree = "<group>"; };
+		F08986D51A55A096006FB6AF /* MyDateUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyDateUtil.h; sourceTree = "<group>"; };
+		F08986DE1A55A4DF006FB6AF /* MyDateUtilTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDateUtilTests.m; sourceTree = "<group>"; };
 		F0B91A85199B98480041D607 /* MyTodoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTodoItem.h; sourceTree = "<group>"; };
 		F0B91A86199B98480041D607 /* MyTodoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTodoItem.m; sourceTree = "<group>"; };
 		F0B91A88199BB5A30041D607 /* MyBaseUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBaseUIViewController.h; sourceTree = "<group>"; };
@@ -147,11 +152,10 @@
 		F00E28FC1A1876B400C1D94F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F06111FA1A56E0E000090194 /* Common */,
 				F00E28FD1A1876D600C1D94F /* ToDo */,
 				F0B91A88199BB5A30041D607 /* MyBaseUIViewController.h */,
 				F0B91A89199BB5A30041D607 /* MyBaseUIViewController.m */,
-				F00E28F91A1875EB00C1D94F /* DatePickerViewController.m */,
-				F00E28FB1A18761D00C1D94F /* DatePickerViewController.h */,
 				F0FC3D18194D0D21006DD5B2 /* ColorViewController.h */,
 				F0FC3D19194D0D21006DD5B2 /* ColorViewController.m */,
 				F0E924C8193A318A00A72164 /* MyViewController.h */,
@@ -173,6 +177,24 @@
 				F00E28FE1A1876F800C1D94F /* DetailViewController.m */,
 			);
 			name = ToDo;
+			sourceTree = "<group>";
+		};
+		F06111FA1A56E0E000090194 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F00E28FB1A18761D00C1D94F /* DatePickerViewController.h */,
+				F00E28F91A1875EB00C1D94F /* DatePickerViewController.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		F08986D11A559720006FB6AF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F08986D51A55A096006FB6AF /* MyDateUtil.h */,
+				F08986D21A559749006FB6AF /* MyDateUtil.m */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		F0B91A84199B98150041D607 /* Model */ = {
@@ -248,6 +270,7 @@
 		F0E924B9193A318A00A72164 /* MyTodoList */ = {
 			isa = PBXGroup;
 			children = (
+				F08986D11A559720006FB6AF /* Util */,
 				F00E28FC1A1876B400C1D94F /* ViewController */,
 				49814F701A147F18008F4EB7 /* Library */,
 				F0B91A84199B98150041D607 /* Model */,
@@ -279,6 +302,7 @@
 			children = (
 				F0E924DE193A318B00A72164 /* MyTodoListTests.m */,
 				F0E924D9193A318B00A72164 /* Supporting Files */,
+				F08986DE1A55A4DF006FB6AF /* MyDateUtilTests.m */,
 			);
 			path = MyTodoListTests;
 			sourceTree = "<group>";
@@ -436,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F046F44C199925A400B8CDE7 /* main.m in Sources */,
+				F08986D31A559749006FB6AF /* MyDateUtil.m in Sources */,
 				F046F4461999258400B8CDE7 /* MapViewController.m in Sources */,
 				F0B91A8A199BB5A30041D607 /* MyBaseUIViewController.m in Sources */,
 				F0B91A87199B98480041D607 /* MyTodoItem.m in Sources */,
@@ -457,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0E924DF193A318B00A72164 /* MyTodoListTests.m in Sources */,
+				F08986DF1A55A4DF006FB6AF /* MyDateUtilTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

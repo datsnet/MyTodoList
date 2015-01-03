@@ -54,6 +54,8 @@
     // button だけ透過
     UIColor *alphaColor2 = [self.closeButton.backgroundColor colorWithAlphaComponent:0.2]; //透過率
     self.closeButton.backgroundColor = alphaColor2;
+    [self.closeButton setTitle:@"" forState:UIControlStateNormal];
+    
     // UIDatepicker だけ非透過
     self.datePicker.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1];
     
@@ -79,7 +81,7 @@
 - (void)datePickerValueChanged:(id)sender
 {
     // デリゲート先の処理を呼び出し、選択された文字列を親Viewに表示させる
-    //[self.delegate applySelectedString:_datePicker.date];
+    [self.delegate applySelectedString:_datePicker.date];
 }
 
 // 空の領域にある透明なボタンがタップされたときに呼び出されるメソッド
@@ -89,6 +91,40 @@
     
     // datePickerを閉じるための処理を呼び出す
     [self.delegate closePickerView:self];
-    
+    [self closePickerView];
 }
+
+- (void) closePickerView
+{
+    // PickerViewをアニメーションを使ってゆっくり非表示にする
+    UIView *pickerView = self.view;
+    
+    // アニメーション完了時のPickerViewの位置を計算
+    CGSize offSize = [UIScreen mainScreen].bounds.size;
+    CGPoint offScreenCenter = CGPointMake(offSize.width / 2.0, offSize.height * 1.5);
+    
+    [UIView beginAnimations:nil context:(void *)pickerView];
+    [UIView setAnimationDuration:0.3];
+    [UIView setAnimationDelegate:self];
+    // アニメーション終了時に呼び出す処理を設定
+    [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
+    pickerView.center = offScreenCenter;
+    [UIView commitAnimations];
+}
+
+// 単位のPickerViewを閉じるアニメーションが終了したときに呼び出されるメソッド
+- (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
+{
+    // PickerViewをサブビューから削除
+    UIView *pickerView = (__bridge UIView *)context;
+    [pickerView removeFromSuperview];
+}
+
+- (IBAction)deleteButtonAction:(id)sender
+{
+    [self closePickerView];
+    // 設定しないボタン押下されたので通知
+    [self.delegate deleteSetting];
+}
+
 @end

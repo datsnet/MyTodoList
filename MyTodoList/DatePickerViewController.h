@@ -23,12 +23,16 @@
 
 // 空の領域にある透明なボタン
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
+// 設定しないボタン
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 
 // 処理のデリゲート先の参照
 @property (weak, nonatomic) id<DatePickerViewControllerDelegate> delegate;
 
 // PickerViewを閉じる処理を行うメソッド。closeButtonが押下されたときに呼び出される
 - (IBAction)closePickerView:(id)sender;
+- (IBAction)deleteButtonAction:(id)sender;
+
 
 @property (nonatomic, assign) int datePickerMode;
 @property (nonatomic, retain) NSString *pickerName;
@@ -40,7 +44,9 @@
 @protocol DatePickerViewControllerDelegate <NSObject>
 // 選択された文字列を適用するためのデリゲートメソッド
 //-(void)applySelectedString:(NSString *)str;
--(void)applySelectedString:(NSDate *)str;
+-(void)applySelectedString:(NSDate *)date;
 // 当該PickerViewを閉じるためのデリゲートメソッド
 -(void)closePickerView:(DatePickerViewController *)controller;
+// 設定しないボタン押下押されたときのデリゲートメソッド
+-(void)deleteSetting;
 @end
