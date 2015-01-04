@@ -10,5 +10,11 @@
 #import "MyBaseUIViewController.h"
 
 @interface MainViewController : MyBaseUIViewController
+@property (weak, nonatomic) IBOutlet UITextField *todoTextField;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
+- (IBAction)editButtonAction:(id)sender;
+
+- (IBAction)todoTextEditingDidEnd:(id)sender;
+
 
 @end
