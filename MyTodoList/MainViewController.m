@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 com.datsnet. All rights reserved.
 //
 
+#import <CoreData/CoreData.h>
 #import "MainViewController.h"
-#import "MyTodoItem.h"
 #import "DetailViewController.h"
 
 @interface MainViewController() <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
@@ -20,10 +20,23 @@
 
 @implementation MainViewController
 
+NSManagedObjectContext *context;
+
 #pragma mark viewDidLoad
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    // TODO: DBから値を取ってくる
+    MyCoreDataManager *manager = [MyCoreDataManager sharedManager];
+    NSMutableArray *todos = [manager all:@"Todo"];
+    _items = todos;
+    for (Todo *todo in todos) {
+        NSLog(@"todo = %@", todo);
+    }
     
     UILongPressGestureRecognizer *gestureRecognizer = [[UILongPressGestureRecognizer alloc]
                                                        initWithTarget:self action:@selector(cellLongPress:)];
@@ -32,14 +45,6 @@
     [_tableView addGestureRecognizer:gestureRecognizer];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    
-    
-    // TODO: DBから値を取ってくる
-}
 
 #pragma mark - Table view data source
 
@@ -58,9 +63,9 @@
     
     
     // セルを設定する
-    MyTodoItem *item = self.items[indexPath.row];
-    cell.textLabel.text = item.title;
-    cell.accessoryType = (item.completed ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone);
+    Todo *item = self.items[indexPath.row];
+    cell.textLabel.text = item.name;
+    cell.accessoryType = (item.complete ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone);
     
 
     return cell;
@@ -143,20 +148,23 @@
     
     NSLog(@"input Text : %@", inputText);
     
-    MyTodoItem *newItem = [[MyTodoItem alloc] init];
-    newItem.title = inputText;
+    // Todo　CodeDataに追加
+    MyCoreDataManager *manager = [MyCoreDataManager sharedManager];
+    Todo *todo = (Todo *) [manager entityForInsert:@"Todo"];
+    todo.name = [NSString stringWithFormat:@"TODO %ld", (long)self.items.count];
+    [manager saveContext];
     
     // テーブルの先頭に新規アイテムを挿入する
     NSIndexPath *indexPathToInsert = [NSIndexPath indexPathForRow:0 inSection:0];
     
     // データソースの更新
-    [self.items insertObject:newItem atIndex:indexPathToInsert.row];
+    [self.items insertObject:todo atIndex:indexPathToInsert.row];
     // テーブルビューの更新
     [self.tableView insertRowsAtIndexPaths:@[indexPathToInsert] withRowAnimation:UITableViewRowAnimationAutomatic];
     
     // テキストフィールドのクリア
     _todoTextField.text = @"";
-//    [[self tableView] setEditing:YES animated:YES];
+    //    [[self tableView] setEditing:YES animated:YES];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MyBaseUIViewController.h"
+#import "MyCoreDataManager.h"
+#import "Todo.h"
 
 @interface MainViewController : MyBaseUIViewController
 @property (weak, nonatomic) IBOutlet UITextField *todoTextField;
