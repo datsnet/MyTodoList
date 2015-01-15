@@ -10,6 +10,7 @@
 		4902F7E01A11E5C700031EB0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE374C48E78E4956BC26C902 /* libPods.a */; };
 		49814F6E1A1237F3008F4EB7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE374C48E78E4956BC26C902 /* libPods.a */; };
 		49814F741A147F33008F4EB7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49814F731A147F33008F4EB7 /* SWRevealViewController.m */; };
+		6F3F310D1A67D2E30052F045 /* MainViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3F310C1A67D2E30052F045 /* MainViewControllerTests.m */; };
 		6FD51AED1A652A0900A17E82 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6FD51AEB1A652A0900A17E82 /* Model.xcdatamodeld */; };
 		6FD51AEF1A652E5900A17E82 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD51AEE1A652E5900A17E82 /* CoreData.framework */; };
 		6FD51AF41A65321700A17E82 /* MyCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD51AF31A65321700A17E82 /* MyCoreDataManager.m */; };
@@ -60,6 +61,7 @@
 		04DDE86CB75BBAF719129315 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		49814F721A147F33008F4EB7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		49814F731A147F33008F4EB7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		6F3F310C1A67D2E30052F045 /* MainViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewControllerTests.m; sourceTree = "<group>"; };
 		6FD51AEC1A652A0900A17E82 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		6FD51AEE1A652E5900A17E82 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6FD51AF31A65321700A17E82 /* MyCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCoreDataManager.m; path = Model/CoreData/MyCoreDataManager.m; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 		F0E924D8193A318B00A72164 /* MyTodoListTests */ = {
 			isa = PBXGroup;
 			children = (
+				6F3F310C1A67D2E30052F045 /* MainViewControllerTests.m */,
 				F0E924DE193A318B00A72164 /* MyTodoListTests.m */,
 				F0E924D9193A318B00A72164 /* Supporting Files */,
 				F08986DE1A55A4DF006FB6AF /* MyDateUtilTests.m */,
@@ -520,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0E924DF193A318B00A72164 /* MyTodoListTests.m in Sources */,
+				6F3F310D1A67D2E30052F045 /* MainViewControllerTests.m in Sources */,
 				F08986DF1A55A4DF006FB6AF /* MyDateUtilTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
