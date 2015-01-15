@@ -10,9 +10,7 @@
 #import "MainViewController.h"
 #import "DetailViewController.h"
 
-@interface MainViewController() <UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *addItem;
-
+@interface MainViewController() <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
 @property (nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *datasource;
@@ -40,12 +38,13 @@ NSManagedObjectContext *context;
         NSLog(@"todo = %@", todo);
     }
     
+    UILongPressGestureRecognizer *gestureRecognizer = [[UILongPressGestureRecognizer alloc]
+                                                       initWithTarget:self action:@selector(cellLongPress:)];
+    gestureRecognizer.minimumPressDuration = 0.5; //seconds
+    gestureRecognizer.delegate = self;
+    [_tableView addGestureRecognizer:gestureRecognizer];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-
-}
 
 #pragma mark - Table view data source
 
@@ -102,8 +101,53 @@ NSManagedObjectContext *context;
     DetailViewController *detaliViewController = [[DetailViewController alloc] init];
     [self presentViewController:detaliViewController animated:YES completion:nil];
 }
-- (IBAction)addItem:(id)sender
+
+- (void)changeEditMode {
+    BOOL isEditing = [_tableView isEditing];
+    // 編集ボタンを切り替える
+    BOOL editing = !self.tableView.editing;
+    if (editing) {
+        _editButton.title = NSLocalizedString(@"Done", @"Done");
+        //Added in the edition for this button has the same color of the UIBarButtonSystemItemDone
+        _editButton.style = UIBarButtonItemStyleDone;
+    }
+    else{
+        _editButton.title = NSLocalizedString(@"Edit", @"Edit");
+        //Added in the edition for this button has the same color of the UIBarButtonSystemItemDone
+        _editButton.style = UIBarButtonItemStylePlain;
+    }
+    
+    [_tableView setEditing:!isEditing animated:!isEditing];
+}
+
+- (IBAction)editButtonAction:(id)sender {
+    
+    [self changeEditMode];
+}
+
+// 編集モード時のコールバック
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // 削除処理
+        // 該当するデータを削除する
+        // データソースの更新
+        [self.items removeObjectAtIndex:indexPath.row];
+        
+        
+        // テーブルから該当セルを削除する
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // 挿入処理
+    }   
+}
+
+- (IBAction)todoTextEditingDidEnd:(id)sender {
+    NSString *inputText = _todoTextField.text;
+    
+    NSLog(@"input Text : %@", inputText);
+    
     // Todo　CodeDataに追加
     MyCoreDataManager *manager = [MyCoreDataManager sharedManager];
     Todo *todo = (Todo *) [manager entityForInsert:@"Todo"];
@@ -113,13 +157,44 @@ NSManagedObjectContext *context;
     // テーブルの先頭に新規アイテムを挿入する
     NSIndexPath *indexPathToInsert = [NSIndexPath indexPathForRow:0 inSection:0];
     
-    
     // データソースの更新
     [self.items insertObject:todo atIndex:indexPathToInsert.row];
     // テーブルビューの更新
     [self.tableView insertRowsAtIndexPaths:@[indexPathToInsert] withRowAnimation:UITableViewRowAnimationAutomatic];
     
-    
+    // テキストフィールドのクリア
+    _todoTextField.text = @"";
+    //    [[self tableView] setEditing:YES animated:YES];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+//    if(fromIndexPath.section == toIndexPath.section) { // 移動元と移動先は同じセクションです。
+//        if(stringArray && toIndexPath.row < [stringArray count]) {
+//            id item = [[stringArray objectAtIndex:fromIndexPath.row] retain]; // 移動対象を保持します。
+//            [stringArray removeObject:item]; // 配列から一度消します。
+//            [stringArray insertObject:item atIndex:toIndexPath.row]; // 保持しておいた対象を挿入します。
+//            [item release]; // itemは不要になるので開放します。
+//        }
+//    }
+}
+
+- (void) cellLongPress:(UILongPressGestureRecognizer*)gestureRecognizer
+{
+    if (!_tableView.editing) {
+        // UILongPressGestureRecognizerからlocationInView:を使ってタップした場所のCGPointを取得する
+        CGPoint p = [gestureRecognizer locationInView:_tableView];
+        // 取得したCGPointを利用して、indexPathForRowAtPoint:でタップした場所のNSIndexPathを取得する
+        NSIndexPath *indexPath = [_tableView indexPathForRowAtPoint:p];
+        // NSIndexPathを利用して、cellForRowAtIndexPath:で該当でUITableViewCellを取得する
+        UITableViewCell *cell = [_tableView cellForRowAtIndexPath:indexPath];
+        if (cell != nil) {
+            [self changeEditMode];
+        }
+    }
 }
 
 @end

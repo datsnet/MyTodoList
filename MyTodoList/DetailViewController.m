@@ -18,6 +18,7 @@
 @implementation DetailViewController
 
 UILabel *limitedDateLabel;
+UITextView *memoTextView;
 NSString *limitedDate;
 // DatePickerの初期値
 NSDate *iniDate;
@@ -29,8 +30,9 @@ NSDate *iniDate;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    self.cellNames = [NSArray arrayWithObjects:@"CellLimited", nil];
+    self.cellNames = [NSArray arrayWithObjects:@"CellMemo", @"CellLimited", nil];
     self.tableView.allowsMultipleSelectionDuringEditing = YES;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -52,10 +54,13 @@ NSDate *iniDate;
     NSString *cellName = [self.cellNames objectAtIndex:indexPath.row];
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellName];
     
+    memoTextView = (UITextView *)[cell viewWithTag:1];
+    
     // 期限日のラベルを設定
     // TODO DBからとってきて初期値を設定する
-    limitedDateLabel = (UILabel *)[cell viewWithTag:1];
+    limitedDateLabel = (UILabel *)[cell viewWithTag:2];
     limitedDateLabel.text = @"";
+    
     
     return cell;
 }

@@ -21,13 +21,16 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - SWTableViewCell (0.3.7)
+  - TWSReleaseNotesView (1.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - SWTableViewCell (~> 0.3.6)
+  - TWSReleaseNotesView (~> 1.2.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
   SWTableViewCell: 25de71898e3fcd11cf75707ef90245acf990ec03
+  TWSReleaseNotesView: 78ecc93fbf0d9a5f22182269cc0ab04509457271
 
 COCOAPODS: 0.35.0

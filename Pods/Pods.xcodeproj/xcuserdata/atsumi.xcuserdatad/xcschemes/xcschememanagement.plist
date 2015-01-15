@@ -9,12 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-SWRevealViewController.xcscheme</key>
+		<key>Pods-SWTableViewCell.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme_^#shared#^_</key>
+		<key>Pods-TWSReleaseNotesView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,42 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>55652B829D0F45429FD0A06E</key>
+		<key>84827987CD9685064AD7DAF0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6DC69322BB8C4BB7AB105C84</key>
+		<key>8AD146C7D12EDD69926A0D98</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7F7E4768751240748B2EEFE6</key>
+		<key>AF4D287B5143B9F571604D9C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95526A448AA042BFB13F392B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C706D359CA304232A2302DBD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D88818DDB48047C3B04377B4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EE1B8619D4D84A7AB17778CE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FED9429BA0FD401D9CFFEAF7</key>
+		<key>D651B864D1D1538FE2217564</key>
 		<dict>
 			<key>primary</key>
 			<true/>
