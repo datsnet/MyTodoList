@@ -18,8 +18,9 @@
 - (void)saveContext;
 -(NSMutableArray *)all:(NSString *)entityName;
 -(NSMutableArray *)all:(NSString *)entityName sortKey:(NSString *)key;
+-(NSMutableArray *)all:(NSString *)entityName sortKey:(NSString *)key ascending:(BOOL)ascending;
 -(NSMutableArray *)fetch:(NSString *)entityName limit:(int)limit;
--(NSMutableArray *)fetch:(NSString *)entityName sortKey:(NSString *)key limit:(int)limit;
+-(NSMutableArray *)fetch:(NSString *)entityName sortKey:(NSString *)key limit:(int)limit ascending:(BOOL)ascending;
 -(NSManagedObject *)entityForInsert:(NSString *)entityName;
 
 - (NSURL *)applicationDocumentsDirectory;

@@ -58,15 +58,20 @@
 
 -(NSMutableArray *)all:(NSString *)entityName sortKey:(NSString *)key
 {
-    return [self fetch:entityName sortKey:key limit:0];
+    return [self fetch:entityName sortKey:key limit:0 ascending:NO];
+}
+
+-(NSMutableArray *)all:(NSString *)entityName sortKey:(NSString *)key ascending:(BOOL)ascending
+{
+    return [self fetch:entityName sortKey:key limit:0 ascending:ascending];
 }
 
 -(NSMutableArray *)fetch:(NSString *)entityName limit:(int)limit
 {
-    return [self fetch:entityName sortKey:nil limit:limit];
+    return [self fetch:entityName sortKey:nil limit:limit ascending:NO];
 }
 
--(NSMutableArray *)fetch:(NSString *)entityName sortKey:(NSString *)key limit:(int)limit
+-(NSMutableArray *)fetch:(NSString *)entityName sortKey:(NSString *)key limit:(int)limit ascending:(BOOL)ascending
 {
     NSManagedObjectContext* context = self.managedObjectContext;
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
@@ -74,7 +79,7 @@
     [request setEntity:entity];
     if(key != nil)
     {
-        NSSortDescriptor* sort = [[NSSortDescriptor alloc] initWithKey:key ascending:NO];
+        NSSortDescriptor* sort = [[NSSortDescriptor alloc] initWithKey:key ascending:ascending];
         [request setSortDescriptors:[NSArray arrayWithObject:sort]];
     }
     

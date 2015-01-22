@@ -30,9 +30,9 @@ NSManagedObjectContext *context;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    // TODO: DBから値を取ってくる
+    // DBから値を取ってくる
     MyCoreDataManager *manager = [MyCoreDataManager sharedManager];
-    NSMutableArray *todos = [manager all:@"Todo"];
+    NSMutableArray *todos = [manager all:@"Todo" sortKey:@"sort" ascending:YES];
     _items = todos;
     for (Todo *todo in todos) {
         NSLog(@"todo = %@", todo);
@@ -65,7 +65,7 @@ NSManagedObjectContext *context;
     // セルを設定する
     Todo *item = self.items[indexPath.row];
     cell.textLabel.text = item.name;
-    cell.accessoryType = (item.complete ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone);
+    cell.accessoryType = ([item.complete shortValue] == 1 ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone);
     
 
     return cell;
@@ -148,10 +148,21 @@ NSManagedObjectContext *context;
     
     NSLog(@"input Text : %@", inputText);
     
+    if (inputText == nil) {
+        return;
+    }
+    
     // Todo　CodeDataに追加
     MyCoreDataManager *manager = [MyCoreDataManager sharedManager];
     Todo *todo = (Todo *) [manager entityForInsert:@"Todo"];
-    todo.name = [NSString stringWithFormat:@"TODO %ld", (long)self.items.count];
+    todo.name = inputText;
+    todo.sort = 0;
+    
+    // 他のデータのソート番号をインクリメントする
+    NSMutableArray *allTodos = [manager fetch:@"Todo" limit:0];
+    for (Todo *item in allTodos) {
+        item.sort = [NSNumber numberWithLong:[item.sort longValue] + 1];
+    }
     [manager saveContext];
     
     // テーブルの先頭に新規アイテムを挿入する
