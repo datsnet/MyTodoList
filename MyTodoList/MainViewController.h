@@ -10,6 +10,7 @@
 #import "MyBaseUIViewController.h"
 #import "MyCoreDataManager.h"
 #import "Todo.h"
+#import "TodoTableViewCell.h"
 
 @interface MainViewController : MyBaseUIViewController
 @property (weak, nonatomic) IBOutlet UITextField *todoTextField;

@@ -58,7 +58,7 @@ NSManagedObjectContext *context;
 {
     static NSString *CellIdentifier = @"TodoListPropertyCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath:indexPath];
+    TodoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath:indexPath];
     cell.textLabel.text = self.datasource[indexPath.row];
     
     
