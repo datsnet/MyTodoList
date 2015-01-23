@@ -20,16 +20,19 @@ PODS:
   - AFNetworking/UIKit (2.5.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - SWRevealViewController (2.0.2)
   - SWTableViewCell (0.3.7)
   - TWSReleaseNotesView (1.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - SWRevealViewController (~> 2.0.0)
   - SWTableViewCell (~> 0.3.7)
   - TWSReleaseNotesView (~> 1.2.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
+  SWRevealViewController: 119ab2751108a95071b01d24967920af54ebe96e
   SWTableViewCell: 25de71898e3fcd11cf75707ef90245acf990ec03
   TWSReleaseNotesView: 78ecc93fbf0d9a5f22182269cc0ab04509457271
 

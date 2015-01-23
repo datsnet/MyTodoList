@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4902F7E01A11E5C700031EB0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE374C48E78E4956BC26C902 /* libPods.a */; };
 		49814F6E1A1237F3008F4EB7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE374C48E78E4956BC26C902 /* libPods.a */; };
-		49814F741A147F33008F4EB7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49814F731A147F33008F4EB7 /* SWRevealViewController.m */; };
 		6F3F310D1A67D2E30052F045 /* MainViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3F310C1A67D2E30052F045 /* MainViewControllerTests.m */; };
 		6F69D4EF1A72555C0057CDC6 /* TodoTableVeiwCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F69D4ED1A72555C0057CDC6 /* TodoTableVeiwCell.m */; };
 		6FD51AED1A652A0900A17E82 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6FD51AEB1A652A0900A17E82 /* Model.xcdatamodeld */; };
@@ -60,8 +59,6 @@
 
 /* Begin PBXFileReference section */
 		04DDE86CB75BBAF719129315 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		49814F721A147F33008F4EB7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		49814F731A147F33008F4EB7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		6F3F310C1A67D2E30052F045 /* MainViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewControllerTests.m; sourceTree = "<group>"; };
 		6F69D4ED1A72555C0057CDC6 /* TodoTableVeiwCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoTableVeiwCell.m; sourceTree = "<group>"; };
 		6F69D4EE1A72555C0057CDC6 /* TodoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoTableViewCell.h; sourceTree = "<group>"; };
@@ -149,23 +146,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		49814F701A147F18008F4EB7 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				49814F711A147F33008F4EB7 /* SWRevealViewController */,
-			);
-			name = Library;
-			sourceTree = "<group>";
-		};
-		49814F711A147F33008F4EB7 /* SWRevealViewController */ = {
-			isa = PBXGroup;
-			children = (
-				49814F721A147F33008F4EB7 /* SWRevealViewController.h */,
-				49814F731A147F33008F4EB7 /* SWRevealViewController.m */,
-			);
-			path = SWRevealViewController;
-			sourceTree = "<group>";
-		};
 		6F69D4EC1A72555C0057CDC6 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,7 +302,6 @@
 				6F69D4EC1A72555C0057CDC6 /* View */,
 				F08986D11A559720006FB6AF /* Util */,
 				F00E28FC1A1876B400C1D94F /* ViewController */,
-				49814F701A147F18008F4EB7 /* Library */,
 				F0B91A84199B98150041D607 /* Model */,
 				F0B91A8E199BBA130041D607 /* Animation Controllers */,
 				F0B91A93199BBA4A0041D607 /* Resources */,
@@ -527,7 +506,6 @@
 				6FD51AED1A652A0900A17E82 /* Model.xcdatamodeld in Sources */,
 				F00E28FA1A1875EB00C1D94F /* DatePickerViewController.m in Sources */,
 				F0B91A8D199BBA0B0041D607 /* CustomAnimationController.m in Sources */,
-				49814F741A147F33008F4EB7 /* SWRevealViewController.m in Sources */,
 				F00E28FF1A1876F800C1D94F /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
